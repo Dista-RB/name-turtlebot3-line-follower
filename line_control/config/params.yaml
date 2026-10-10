@@ -1,0 +1,12 @@
+control_node:
+  ros__parameters:
+    use_sim_time: true
+    linear_speed: 0.1
+    angular_gain: 1.0
+    wheel_track: 0.287
+    max_wheel_speed: 0.26
+    line_timeout: 0.5
+
+vision_node:
+  ros__parameters:
+    use_sim_time: true
