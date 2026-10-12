@@ -189,3 +189,18 @@ publishing the result. Full method, results and limitations:
 - [x] Simulation world packaged in this repository (`line_follower_sim`)
 - [ ] Test on a real TurtleBot3
 - [ ] Reuse as part of a larger task
+
+## License and credits
+
+The code in this repository is released under the [MIT License](LICENSE).
+
+The simulation assets in `line_follower_sim` are not covered by that license
+and belong to their original authors:
+
+- **Course world and floor texture** (`worlds/turtlebot3_course2.world`,
+  `models/turtlebot3_course/`): from the final project of the ROS course at
+  King Mongkut's University of Technology North Bangkok (KMUTNB), 2023.
+- **Charging dock with ArUco marker** (`models/charging_dock2_with_aruco/`):
+  by Addison Sears-Collins (Automatic Addison).
+- **TurtleBot3** robot models and spawn launch files: ROBOTIS
+  (`turtlebot3_simulations`, Apache-2.0), used as a dependency.

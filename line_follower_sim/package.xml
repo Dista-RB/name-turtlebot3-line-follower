@@ -5,7 +5,7 @@
   <version>0.1.0</version>
   <description>Gazebo world (blue line course) and launch file for the TurtleBot3 line follower</description>
   <maintainer email="disthkantc@gmail.com">dista</maintainer>
-  <license>TODO</license>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

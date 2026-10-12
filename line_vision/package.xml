@@ -5,7 +5,7 @@
   <version>0.1.0</version>
   <description>Python vision node: finds a blue line in the camera image and publishes a steering error in [-1, 1]</description>
   <maintainer email="disthkantc@gmail.com">dista</maintainer>
-  <license>TODO: License declaration</license>
+  <license>MIT</license>
 
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>

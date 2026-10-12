@@ -17,7 +17,7 @@ setup(
     maintainer_email='disthkantc@gmail.com',
     description=('Python vision node: finds a blue line in the camera image '
                  'and publishes a steering error in [-1, 1]'),
-    license='TODO: License declaration',
+    license='MIT',
     extras_require={
         'test': [
             'pytest',
