@@ -4,7 +4,7 @@ package_name = 'line_vision'
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version='0.1.0',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -15,7 +15,8 @@ setup(
     zip_safe=True,
     maintainer='dista',
     maintainer_email='disthkantc@gmail.com',
-    description='TODO: Package description',
+    description=('Python vision node: finds a blue line in the camera image '
+                 'and publishes a steering error in [-1, 1]'),
     license='TODO: License declaration',
     extras_require={
         'test': [

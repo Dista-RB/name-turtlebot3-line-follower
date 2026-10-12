@@ -47,6 +47,7 @@ flowchart LR
 | `line_vision` | Python (`ament_python`) | `vision_node`: camera → `/line_error` |
 | `line_control` | C++ (`ament_cmake`) | `control_node`: `/line_error` → `/cmd_vel`; launch file and parameters |
 | `line_vision_cpp` | C++ (`ament_cmake`) | `vision_node_cpp`: the same vision logic in C++ (see [Side experiment](#side-experiment-python-vs-c-vision-node)) |
+| `line_follower_sim` | – (`ament_cmake`) | Gazebo world with the blue line course, its models, and the simulator launch file |
 
 ## Versions
 
@@ -87,7 +88,7 @@ git checkout main  # version 2
 ## Requirements
 
 - Ubuntu 22.04, ROS 2 Humble, Gazebo Classic
-- `turtlebot3`, `turtlebot3_simulations` (ROBOTIS)
+- `turtlebot3`, `turtlebot3_simulations` (ROBOTIS): robot model and spawn launch files
 - OpenCV and `cv_bridge` (installed with ROS 2 Humble desktop)
 
 The simulation uses the **`waffle_pi`** model, because the Burger model in
@@ -108,14 +109,16 @@ without it colcon builds them unoptimized.
 
 ## Run
 
-Terminal 1, the simulator:
+Terminal 1, the simulator (course with the blue line + TurtleBot3 `waffle_pi`):
 
 ```bash
-export TURTLEBOT3_MODEL=waffle_pi
-export GAZEBO_IP=127.0.0.1        # Gazebo needs this when the machine is offline
-export QT_QPA_PLATFORM=xcb        # needed on Wayland desktops
-ros2 launch turtlebot3_gazebo turtlebot3_course2.launch.py
+ros2 launch line_follower_sim course2.launch.py
 ```
+
+The launch file sets `TURTLEBOT3_MODEL=waffle_pi`, `GAZEBO_IP=127.0.0.1` (so
+Gazebo works offline) and `QT_QPA_PLATFORM=xcb` (so the Gazebo window and the
+camera work on Wayland desktops). Add `gui:=false` to run without the Gazebo
+window.
 
 Terminal 2, vision + control:
 
@@ -183,7 +186,6 @@ publishing the result. Full method, results and limitations:
 - [x] Launch file and parameter file
 - [x] C++ vision node (side experiment)
 - [x] Version 2: timing instrumentation for the side experiment
-- [ ] Package the `turtlebot3_course2` simulation world in this repository
-  (it currently lives in a local copy of `turtlebot3_simulations`)
+- [x] Simulation world packaged in this repository (`line_follower_sim`)
 - [ ] Test on a real TurtleBot3
 - [ ] Reuse as part of a larger task
