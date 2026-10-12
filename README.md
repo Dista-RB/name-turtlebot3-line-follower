@@ -47,7 +47,7 @@ flowchart LR
 | `line_vision` | Python (`ament_python`) | `vision_node`: camera → `/line_error` |
 | `line_control` | C++ (`ament_cmake`) | `control_node`: `/line_error` → `/cmd_vel`; launch file and parameters |
 | `line_vision_cpp` | C++ (`ament_cmake`) | `vision_node_cpp`: the same vision logic in C++ (see [Side experiment](#side-experiment-python-vs-c-vision-node)) |
-| `line_follower_sim` | – (`ament_cmake`) | Gazebo world with the blue line course, its models, and the simulator launch file |
+| `line_follower_sim` | – (`ament_cmake`) | Gazebo world with the blue line course, its floor model, and the simulator launch file |
 
 ## Versions
 
@@ -200,7 +200,7 @@ and belong to their original authors:
 - **Course world and floor texture** (`worlds/turtlebot3_course2.world`,
   `models/turtlebot3_course/`): from the final project of the ROS course at
   King Mongkut's University of Technology North Bangkok (KMUTNB), 2023.
-- **Charging dock with ArUco marker** (`models/charging_dock2_with_aruco/`):
-  by Addison Sears-Collins (Automatic Addison).
+  The charging dock model that the original world contained was removed, since
+  this project does not use it.
 - **TurtleBot3** robot models and spawn launch files: ROBOTIS
   (`turtlebot3_simulations`, Apache-2.0), used as a dependency.
